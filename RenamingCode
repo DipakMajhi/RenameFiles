@@ -1,0 +1,11 @@
+clear all;clc;
+
+imFolder = 'G:\HMMtry\im2';
+
+dirData = dir([imFolder, '\*.jpg']);	%# Get the selected file data     	 
+fileNames = {dirData.name};    		 %# Create a cell array of file names
+
+for iFile = 1:numel(fileNames) 		 %# Loop over the file names
+  newName = sprintf('testimg%02d.jpg',iFile);  %# Make the new name
+  movefile(fileNames{iFile},newName);        
+end
